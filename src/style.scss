@@ -1,9 +1,13 @@
 body {
-	background: #cfde57;
 	padding: 0;
 	overflow: hidden;
 	margin: 0;
 	color: #333;
+	.banner {
+		height: 220px;
+		width: 1000px;
+		position: relative;
+	}
 	a {
 		display: block;
 		overflow: hidden;
@@ -20,8 +24,20 @@ body {
 			grid-template-columns: 1fr 1fr;
 			animation: slide 10s infinite;
 			z-index: 10;
+			.text {
+				display: flex;
+				align-items: center;
+			}
 			img {
-				max-width: 100%;
+				height: 200px;
+				width: auto;
+			}
+			@media (min-width: 999px) {
+				left: 50px;
+				height: 200%;
+				width: auto;
+				grid-template-columns: 1fr;
+				animation: slideY 10s infinite;
 			}
 		}
 		@keyframes slide {
@@ -44,26 +60,24 @@ body {
 				transform: translateX(0%);
 			}
 		}
-		@media (min-width: 300px) {
-			@keyframes slide {
-				0% {
-					transform: translateY(0);
-				}
-				33% {
-					transform: translateY(0);
-				}
-				43% {
-					transform: translateY(-50%);
-				}
-				43.1% {
-					transform: translateY(-50%);
-				}
-				80% {
-					transform: translateY(-50%);
-				}
-				90% {
-					transform: translateY(0%);
-				}
+		@keyframes slideY {
+			0% {
+				transform: translateY(0);
+			}
+			33% {
+				transform: translateY(0);
+			}
+			43% {
+				transform: translateY(-50%);
+			}
+			43.1% {
+				transform: translateY(-50%);
+			}
+			80% {
+				transform: translateY(-50%);
+			}
+			90% {
+				transform: translateY(0%);
 			}
 		}
 	}
@@ -110,10 +124,6 @@ body {
 			border-radius: 5px;
 			text-align: center;
 			font-size: 12px;
-			@media (min-width: 300px) {
-				background: #333;
-				color: #fff;
-			}
 		}
 		.subtext {
 			font-size: 12px;
@@ -148,4 +158,10 @@ body {
 }
 .ad3 .footer .content .headline {
 	color: #d86897;
+}
+
+.ad1 .text-2 {
+	img {
+		margin-top: -1rem;
+	}
 }
